@@ -84,7 +84,7 @@ pipeline {
             stage('Build Docker Image') {
     steps {
            script {
-                    dir("/var/jenkins_home/workspace/nobroker1/devops/dockerfile${params.Env}/") {
+                    dir("devops/dockerfile${params.Env}/") {
                           sh "docker build --build-arg ${params.Env}=${params.Version} -t localhost:5000/nobroker/java-latest:${params.Env}-${params.Version} ."
                 }
              }
