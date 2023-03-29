@@ -84,7 +84,7 @@ pipeline {
             stage('Build Docker Image') {
     steps {
            script {
-                    dir("/practice/devops/${params.Env}/") {
+                    dir("practice/devops/${params.Env}/") {
                           sh "docker build --build-arg ${params.Env}=${params.Version} -t repository.nobroker.in:9094/devops/baseimage:${params.Env}-${params.Version} ."
                 }
              }
