@@ -84,8 +84,8 @@ pipeline {
             stage('Build Docker Image') {
     steps {
            script {
-                    dir("devops/dockerfile${params.Env}/") {
-                          sh "docker build  -f devops/dockerfile  -t localhost:5000/nobroker/java:${params.Env}-${params.Version} ."
+                    dir("devops/dockerfile") {
+                          sh "docker build --build-arg $(params.Env)=$(params.Version)  -t localhost:5000/nobroker/java:${params.Env}-${params.Version} ."
                 }
              }
           }
