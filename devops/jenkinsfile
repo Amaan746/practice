@@ -92,7 +92,7 @@ pipeline {
        }
     stage('Publish Docker Image') {
             steps {
-                    sh "docker push localhost:5000/nobroker/java-latest:${params.Env}-${params.Version}"
+                    sh "docker push localhost:5000/nobroker/java:${params.Env}-${params.Version}"
             }
         }        
     }   
