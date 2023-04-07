@@ -84,7 +84,7 @@ pipeline {
             stage('Build Docker Image') {
     steps {
            script {
-                    dir("devops") {
+                    dir("java-devops") {
                           
                           sh "docker login localhost:5000 -u admin -p admin"
                           sh "docker build -f dockerfile --build-arg ${params.Env}=${params.Version} -t localhost:5000/nobroker/java:${params.Env}-${params.Version} ."
