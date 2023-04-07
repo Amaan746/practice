@@ -13,8 +13,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dir('node-devops/nodejs-dockerfile') {
-                       sh "docker build --build-arg NODE_VERSION=${NODE_VERSION} -t localhost:5000/baseimage-nodejs:${NODE_VERSION} ."
+                    dir('node-devops') {
+                       sh "docker build nodejs-dockerfile --build-arg NODE_VERSION=${NODE_VERSION} -t localhost:5000/baseimage-nodejs:${NODE_VERSION} ."
                 }
               }
             }
