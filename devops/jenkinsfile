@@ -85,12 +85,15 @@ pipeline {
     steps {
            script {
                     dir("devops") {
-                          sh "docker build -f dockerfile --build-arg ${params.Env}=${params.Version} -t localhost:5000/nobroker/java:${params.Env}-${params.Version} ."
+                          sh '''
+                          docker login localhost:5000 -u admin -p admin
+                          docker build -f dockerfile --build-arg ${params.Env}=${params.Version} -t localhost:5000/nobroker/java:${params.Env}-${params.Version} .
+                          '''
                 }
              }
           }
        }
-    stage('Publish Docker Image') {
+    stage('Push Docker Image') {
             steps {
                     sh "docker push localhost:5000/nobroker/java:${params.Env}-${params.Version}"
             }
