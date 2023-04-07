@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     dir('node-devops') {
-                       sh "docker build -f nodejs.dockerfile --build-arg NODE_VERSION=${NODE_VERSION} -t localhost:5000/baseimage-nodejs:${NODE_VERSION} ."
+                       sh "docker build -f nodejs-dockerfile --build-arg NODE_VERSION=${NODE_VERSION} -t localhost:5000/baseimage-nodejs:${NODE_VERSION} ."
                 }
               }
             }
