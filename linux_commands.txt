@@ -31,6 +31,7 @@ df - Display disk filesystem information
 chmod - Command to change file permissions
 ifconfig - Display network interfaces and IP addresses
 wget - Direct download files from the internet
+curl - Fetch data from the internet
 ufw - Firewall command
 apt, pacman, yum, rpm - Package managers depending on the distro
 sudo - Command to escalate privileges in Linux
@@ -38,3 +39,4 @@ alias - Create custom shortcuts for your regularly used commands
 whereis - Locate the binary, source, and manual pages for a command
 whatis - Find what a command is used for
 top - View active processes live with their system usage
+btop - View active processes live with their system usage ( we need to install )
